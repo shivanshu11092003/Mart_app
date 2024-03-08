@@ -1,5 +1,3 @@
-import com.android.build.api.dsl.ViewBinding
-
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -8,6 +6,7 @@ plugins {
 android {
     namespace = "com.example.kietmart"
     compileSdk = 34
+
 
     defaultConfig {
         applicationId = "com.example.kietmart"
@@ -40,6 +39,7 @@ android {
     }
 }
 
+
 dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
@@ -49,5 +49,9 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
+    //Autoimage
+    implementation ("com.github.smarteist:autoimageslider:1.4.0")
+    //Glide
+    implementation ("com.github.bumptech.glide:glide:4.16.0")
 }
+
