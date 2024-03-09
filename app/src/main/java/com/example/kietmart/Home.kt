@@ -2,11 +2,15 @@ package com.example.kietmart
 
 
 import SliderAdapter
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
+import androidx.fragment.app.FragmentContainerView
+
 
 import com.example.kietmart.databinding.FragmentHomeBinding
 import com.smarteist.autoimageslider.SliderView
@@ -36,6 +40,8 @@ class Home : Fragment() {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Auto image slider start
         sliderView=view.findViewById(R.id.imageSlider)
         imageUrl = ArrayList()
 
@@ -65,6 +71,26 @@ class Home : Fragment() {
         // on below line we are calling start
         // auto cycle to start our cycle.
         sliderView.startAutoCycle()
+
+        //imageslider end
+
+        //three card set on click listener
+
+        val bookcard=view.findViewById<CardView>(R.id.book_cardview)
+        bookcard.setOnClickListener {
+            val intent = Intent(context,Book_Recyclerview::class.java)
+            startActivity(intent)
+        }
+        binding?.fashionCardView?.setOnClickListener {
+            val intent = Intent(context,fashion_Recyclerview::class.java)
+            startActivity(intent)
+        }
+        binding?.electronicCardview?.setOnClickListener {
+            val intent = Intent(context,Electronic_recyclerview::class.java)
+            startActivity(intent)
+        }
+        
+        // end
 
     }
 

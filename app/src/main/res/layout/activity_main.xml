@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:layout_marginTop="0dp"
 
     android:id="@+id/navdrawer"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -23,22 +24,27 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
+
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="56dp"
 
             android:background="#0074D9"
+            android:clickable="true"
+
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.001"
+            app:layout_constraintVertical_bias="0.0"
             app:menu="@menu/navigation"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark" />
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+            app:titleTextColor="@color/white"
+            />
 
         <FrameLayout
             android:id="@+id/main_framelayout"
@@ -61,9 +67,9 @@
                 android:layout_height="65dp"
                 android:background="#0074D9"
                 app:itemRippleColor="@color/white"
-            app:itemTextColor="@color/black"
+            app:itemTextColor="@color/white"
             app:itemBackground="@color/apptheme"
-            app:itemIconTint="@color/black"
+            app:itemIconTint="@color/white"
             app:itemTextAppearanceInactive="@color/white"
 
 
@@ -80,6 +86,7 @@
 
 
 
+
     </androidx.constraintlayout.widget.ConstraintLayout>
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navView"
@@ -88,11 +95,13 @@
         android:paddingTop="30dp"
         app:headerLayout="@layout/nav_header"
         android:layout_gravity="start"
-        android:background="#ffffff"
+        android:background="@color/white"
         app:itemIconTint="@color/black"
+
         app:menu="@menu/naviagationdrawer">
 
     </com.google.android.material.navigation.NavigationView>
+
 
 
 

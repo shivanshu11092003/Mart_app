@@ -4,6 +4,7 @@ package com.example.kietmart
 
 
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -13,6 +14,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import android.view.Window
+import android.view.WindowManager
 
 import com.example.kietmart.databinding.ActivityMainBinding
 
@@ -25,6 +28,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        changeStatusBarColor("#0074D9") // Replace with your desired color code
+
         val binding=ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //support action
@@ -35,7 +41,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         binding.navView.setNavigationItemSelectedListener(this)
 
-        val toggle = ActionBarDrawerToggle(this,drawerlayout,toolbar,R.string.open_nav,R.string.closed_nav)
+        val toggle = ActionBarDrawerToggle(this,drawerlayout,toolbar,
+            R.string.open_nav,
+            R.string.closed_nav
+        )
         drawerlayout.addDrawerListener(toggle)
         toggle.syncState()
 
@@ -56,6 +65,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
 
 
+    }
+    private fun changeStatusBarColor(color: String) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            val window: Window = window
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+            window.statusBarColor = android.graphics.Color.parseColor(color)
+        }
     }
 
 
