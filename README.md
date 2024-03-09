@@ -1,7 +1,7 @@
 Introducing my latest prototype project – a cutting-edge shopping app developed with XML and Kotlin.\
 Seamless navigation via fragment navigation bars, Recycler View and an intuitive navigation drawer,\
 this app is set to redefine the mobile shopping experience. \
-Join me on this journey as we explore the future of e-commerce! 🛍️📱#Prototype #ShoppingApp #XML #Kotlin #NavigationDrawer
+Join me on this journey as we explore the future of e-commerce! 🛍️📱#Prototype #ShoppingApp #XML #Kotlin
 <img src="https://github.com/shivanshu11092003/Mart_app/assets/148114391/041694ab-60c7-4036-bd0d-2952010396dd" alt="image-alt-text" style="max-width:100px;height:600px;">
 <img src="https://github.com/shivanshu11092003/Mart_app/assets/148114391/aaeeb8f2-cb99-4805-9983-e26857f4a1c9" alt="image-alt-text" style="max-width:100px;height:600px;">
 <img src="https://github.com/shivanshu11092003/Mart_app/assets/148114391/29172504-8e03-48da-b52e-80acd78d15ff" alt="image-alt-text" style="max-width:100px;height:600px;">
