@@ -1,59 +1,46 @@
 package com.example.kietmart
 
+import Product
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.kietmart.data.Books
 import com.google.android.material.imageview.ShapeableImageView
+import com.squareup.picasso.Picasso
 
-class MyAdapter(var newsArrayList: ArrayList<Books>, var context: Activity) :
+class MyAdapter(var productdata: List<Product>, val context: Activity) :
     RecyclerView.Adapter<MyAdapter.ViewHolder>() {
-    private lateinit var mylistener: onItemClickListener
-    interface onItemClickListener{
-        fun onclick(position : Int)
+
+    fun setFilteredList(product:List<Product>){
+        this.productdata = product
+        notifyDataSetChanged()
     }
-    fun setOnItemClickListener(listener: onItemClickListener){
-        mylistener=listener
-
-    }
-
-
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val itemview= LayoutInflater.from(parent.context).inflate(R.layout.each_row,parent,false)
-        return ViewHolder(itemview,mylistener)
+        return ViewHolder(itemview)
 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentitem=newsArrayList[position]
-        holder.bookname.text=currentitem.bookname
-        holder.imageid.setImageResource(currentitem.imageid)
-
-
+        val currentitem=productdata[position]
+        holder.bookname.text=currentitem.title
+        Picasso.get().load(currentitem.thumbnail).into(holder.imageid)
 
     }
 
     override fun getItemCount(): Int {
-        return newsArrayList.size
+        return productdata.size
 
     }
 
-    class ViewHolder(itemview: View, listener: onItemClickListener):RecyclerView.ViewHolder(itemview) {
+    inner class ViewHolder(itemview: View): RecyclerView.ViewHolder(itemview) {
         val bookname = itemview.findViewById<TextView>(R.id.productname)
-
         val imageid=itemview.findViewById<ShapeableImageView>(R.id.imageID)
 
-        init {
-            itemview.setOnClickListener {
-                listener.onclick(adapterPosition)
-            }
-        }
-
-
     }
+
 }

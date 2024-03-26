@@ -58,15 +58,9 @@ class fashion_Recyclerview : AppCompatActivity() {
         }
 
 
-        var myAdapter=MyAdapter(BooksArrayLists,this)
+        var myAdapter= MyyAdapter(BooksArrayLists,this)
         recyclerview.adapter=myAdapter
-        myAdapter.setOnItemClickListener(object :MyAdapter.onItemClickListener{
-            override fun onclick(position: Int) {
 
-
-            }
-
-        })
     }
     private fun changeStatusBarColor(color: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {

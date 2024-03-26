@@ -12,10 +12,19 @@ import com.example.kietmart.data.Books
 class Electronic_recyclerview : AppCompatActivity() {
     lateinit var recyclerview: RecyclerView
     lateinit var BooksArrayLists: ArrayList<Books>
+
+
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_book_recyclerview)
+
+
+
         changeStatusBarColor("#0074D9")
+        //Search View
+
 
         recyclerview=findViewById(R.id.recyclerid)
         val imageArray= arrayOf(
@@ -58,15 +67,10 @@ class Electronic_recyclerview : AppCompatActivity() {
         }
 
 
-        var myAdapter=MyAdapter(BooksArrayLists,this)
+        var myAdapter= MyyAdapter(BooksArrayLists,this)
         recyclerview.adapter=myAdapter
-        myAdapter.setOnItemClickListener(object :MyAdapter.onItemClickListener{
-            override fun onclick(position: Int) {
 
 
-            }
-
-        })
     }
     private fun changeStatusBarColor(color: String) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
